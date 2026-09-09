@@ -1,8 +1,8 @@
-# AI Pendant — a wearable voice assistant built from scratch
+# Pensieve AI — a wearable voice assistant built from scratch
 
 A push-to-talk pendant that records what you say, transcribes it locally,
 figures out whether it's a reminder, calendar event, or just a note, and
-files it into Google Calendar / Tasks automatically — no phone app, no
+files it into Google Calendar / Tasks automatically - no phone app, no
 subscription, no cloud company's assistant, just a $30-ish pile of parts
 and open firmware.
 
@@ -11,11 +11,11 @@ Press the button, say something, let go. That's the entire interaction.
 ## What it actually does
 
 1. Records while the button is held (up to 60s), then stops
-2. Saves to a microSD card — recordings are never lost even with no WiFi
+2. Saves to a microSD card - recordings are never lost even with no WiFi
 3. Opportunistically syncs over WiFi whenever it's in range (on button
    press, or automatically once an hour even if you haven't used it)
 4. A receiver script on a PC transcribes the audio locally (private,
-   free — no audio ever leaves your network)
+   free - no audio ever leaves your network)
 5. A small AI call classifies the transcript into an event / task / note
    and extracts the relevant details (dates, times, titles)
 6. That gets pushed straight into Google Calendar or Google Tasks
@@ -33,7 +33,7 @@ can see (and change) exactly what it's doing with what you say.
 
 | Part | Notes |
 |---|---|
-| Seeed XIAO ESP32-S3 Sense | The board — has the mic, camera (unused here), and microSD slot built in |
+| Seeed XIAO ESP32-S3 Sense | The board - has the mic, camera (unused here), and microSD slot built in |
 | LiPo battery, 3.7V, ~1000mAh, JST-PH1.25 connector | Solders directly to the board's BAT+/BAT- pads (no connector on the board itself) |
 | Momentary tactile push button | 6x6mm style, 4-leg (2 electrical pairs) |
 | 4x 4mm x 1mm neodymium magnets | Holds the case closed |
@@ -82,3 +82,8 @@ Each folder has its own README with setup specifics.
 ## License
 
 MIT — do whatever you want with this, attribution appreciated but not required.
+
+---
+
+*This project's code — firmware, case design, and server — was developed
+with assistance from Google Gemini and Anthropic Claude.*
