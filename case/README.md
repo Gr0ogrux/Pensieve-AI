@@ -1,60 +1,36 @@
 # 3D Printed Case
 
-`pendant_case_v4.scad` is the parametric source (OpenSCAD). `base_shell_v9.stl`
-and `lid_shell_v9.stl` are ready-to-print exports of the current design.
+`Pensieve AI.stl` is the ready-to-print export of the current wearable enclosure design, modeled in Tinkercad[cite: 1, 2].
 
 ## Design
 
-- Two-piece design: an open-top base holding the board and battery,
-  and a lid with the mic grill and button cutout
-- Held closed with 4x 4mm x 1mm neodymium magnets (2 per half) rather
-  than screws — no tools needed to open it
-- A solid printed loop (bail) for the necklace cord, positioned at one
-  end so the pendant hangs from a stable point rather than flipping
-  around on the cord
-- Internal divider separates the board and battery pockets, sized to
-  each component individually (not one oversized shared pocket)
-- Small standoff with relief holes for the push button's legs
+- **Integrated alignment system:** Uses locating pins on the lid and mating holes on the base to ensure both halves line up squarely every time it snaps shut.
+- **Magnetic latching:** Held closed with 3mm x 1mm neodymium disc magnets instead of screws, making battery checks and microSD access completely toolless[cite: 2].
+- **Wearable bail:** Includes a solid integrated loop at the top end for a necklace cord or lanyard, keeping the pendant oriented face-forward rather than flipping around while worn[cite: 2].
+- **Dedicated internal compartments:** An internal divider separates the board assembly from the battery compartment, holding each component securely to prevent internal rattles[cite: 2].
+- **Acoustic and control cutouts:** Features an acoustic port aligned with the Sense daughterboard's PDM MEMS microphone capsule and dedicated clearances for the push button and USB-C port[cite: 2].
 
 ## Before printing
 
-**Measure your own parts first.** This design was built around one
-specific set of components (XIAO ESP32-S3 Sense, a MakerHawk 803040
-battery, a 6x6mm tactile button) with real caliper measurements, not
-estimates. If you're using different components, the pocket dimensions
-in the `.scad` file's CONFIG section at the top will need adjusting —
-they're all named variables, not magic numbers buried in the geometry.
+**Check your component dimensions first[cite: 2].** This enclosure was designed specifically around:
+- Seeed Studio XIAO ESP32-S3 Sense[cite: 2]
+- MakerHawk 803040 LiPo battery[cite: 2]
+- 6x6mm tactile push button[cite: 2]
+- 3mm x 1mm neodymium disc magnets
 
-**Print the base alone first and dry-fit everything** — board, battery,
-button, magnets — before committing to printing the lid or doing a full
-production run. This design went through several iterations that looked
-fine on screen but had real fit issues once actually printed; a cheap
-test print catches that early.
+Tolerances are tuned around these specific physical parts[cite: 2]. If you use a different battery size or button style, you may need to import the STL into your CAD software to tweak internal clearances.
+
+**Dry-fit everything before final assembly[cite: 2].** Test-fit the stacked XIAO board, battery, button, and magnets inside the shell[cite: 2]. Running a quick test print before final assembly ensures your printer’s calibration and shrinkage rates match the designed tolerances[cite: 2].
 
 ## Recommended print settings
 
-- **Material**: PETG for the final piece (more durable for something
-  worn daily), PLA is fine for test prints
-- **Layer height**: 0.16-0.2mm
-- **Walls**: 3 perimeters minimum (the shell walls are only ~2.2mm thick)
-- **Infill**: 15-20%
-- **Supports**: none needed if printed with the open face up
-- If switching to PETG, consider slightly loosening the magnet pocket
-  tolerances — PETG's slight flexibility can make press-fits feel
-  tighter than the same dimensions in PLA
+- **Material:** PETG for the daily wearable version (more durable and temperature-resistant for everyday carry); PLA works well for rapid test prints[cite: 2].
+- **Layer height:** 0.16–0.20 mm[cite: 2].
+- **Walls / Perimeters:** 3 perimeters minimum (keeps the shell rigid under pocket or pendant use)[cite: 2].
+- **Infill:** 15–20% (Gyroid or Grid)[cite: 2].
+- **Supports:** None needed when oriented with the flat surfaces against the build plate[cite: 2].
+- **Tolerances note:** PETG flows and flexes slightly differently than PLA, so test your pin-and-hole friction fit and magnet pockets after cooling[cite: 2].
 
 ## Magnet polarity
 
-The STL/SCAD can't encode magnet polarity. Before gluing magnets in,
-hold a base magnet and a lid magnet near each other — if they repel,
-flip one over.
-
-## Regenerating from source
-
-```
-openscad -o base_shell.stl -D 'part="base"' pendant_case_v4.scad
-openscad -o lid_shell.stl  -D 'part="lid"'  pendant_case_v4.scad
-```
-
-Set `part = "preview"` (edit near the bottom of the file) to see both
-halves overlaid in OpenSCAD's own viewer.
+The STL file cannot encode magnet polarity[cite: 2]. Before applying superglue or epoxy into the magnet pockets, place a base magnet and lid magnet together to verify attraction[cite: 2]. If they repel, flip one side over before setting them into the recesses[cite: 2].
