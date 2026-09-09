@@ -1,5 +1,6 @@
 <img width="824" height="825" alt="pensieve_device" src="https://github.com/user-attachments/assets/68c9b5d1-7f52-4b39-95d0-b60bf554cee6" />
-# Pensieve AI — a wearable voice assistant built from scratch
+
+# **Pensieve AI** — a wearable voice assistant built from scratch
 
 A push-to-talk pendant that records what you say, transcribes it locally,
 figures out whether it's a reminder, calendar event, or just a note, and
